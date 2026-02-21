@@ -1,0 +1,4 @@
+interface:
+  display_name: "PPTX"
+  short_description: "Create/redesign .pptx with professional tables, flowcharts, and QA gates"
+  default_prompt: "Use $pptx to create or upgrade this presentation. If the user asks for charts/flows, or if content would be clearer with them, enter Professional Redraw Mode: build one table sample + one flow sample first, then roll out in batch. Confirm A-F/G/H style and panel policy, prioritize semantic tables (`TABLE_*`) and structured flow/timeline diagrams (`FLOW_*` + optional `FLOW_NODE_*`/`FLOW_LINK_*`), run script-based updates, and validate with `qa_check.py` including `--check-table-style` and `--check-flow-structure` before finalizing."
