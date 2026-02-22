@@ -29,4 +29,5 @@ Reusable skills for Codex-style agents.
 
 ## Release Tags
 
+- `pptx-v1.0.0`
 - `literature-research-synthesis-v1.0.0`
