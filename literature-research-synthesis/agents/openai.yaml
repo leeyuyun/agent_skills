@@ -1,0 +1,4 @@
+interface:
+  display_name: "Literature Research Synthesis"
+  short_description: "Run advanced literature review with structured output packaging"
+  default_prompt: "Run a protocol-first literature review: decide target first, apply handbook/submission constraints second, choose draft/final output format (formal defaults to PDF), apply citation priority (guideline/school > discipline > region), maintain a BibTeX/RIS source-of-truth throughout, enforce figure/table metadata and reproducibility rules for visual outputs, and export artifacts under one basename in a single output folder."
