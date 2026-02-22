@@ -29,5 +29,7 @@ Reusable skills for Codex-style agents.
 
 ## Release Tags
 
-- `pptx-v1.0.0`
-- `literature-research-synthesis-v1.0.0`
+| Tag | Date | Note |
+| --- | --- | --- |
+| `pptx-v1.0.0` | `2026-02-22` | Initial `pptx` skill release |
+| `literature-research-synthesis-v1.0.0` | `2026-02-22` | Initial literature research synthesis skill release |
