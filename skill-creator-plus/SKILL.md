@@ -1,11 +1,11 @@
 ﻿---
-name: skill-creator
-description: Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Codex's capabilities with specialized knowledge, workflows, or tool integrations.
+name: skill-creator-plus
+description: Guide for creating effective skills. Before generation, study local skills and `references/codex_skills_resources_zh.md`, then synthesize selected resources into a higher-quality skill design.
 metadata:
   short-description: Create or update a skill
 ---
 
-# Skill Creator
+# Skill Creator Plus
 
 This skill provides guidance for creating effective skills.
 
@@ -44,6 +44,21 @@ Match the level of specificity to the task's fragility and variability:
 **Low freedom (specific scripts, few parameters)**: Use when operations are fragile and error-prone, consistency is critical, or a specific sequence must be followed.
 
 Think of Codex as exploring a path: a narrow bridge with cliffs needs specific guardrails (low freedom), while an open field allows many routes (high freedom).
+
+## Mandatory Pre-Generation Study
+
+Before creating or updating any skill, do this sequence first:
+
+1. Study `references/codex_skills_resources_zh.md`.
+2. Inspect local skills metadata (`SKILL.md` name/description) from:
+- `$CODEX_HOME/skills/*/SKILL.md`
+- `$WORKSPACE/.codex/skills/*/SKILL.md` (if present)
+- `$CODEX_HOME/skills/.system/*/SKILL.md` (read-only reference)
+3. Produce candidate classification: Core / Support / Exclude.
+4. Synthesize a single workflow blueprint before writing files.
+
+Do not skip this sequence.
+Use relative paths inside this skill. Avoid machine-specific absolute paths.
 
 ### Anatomy of a Skill
 
@@ -211,6 +226,16 @@ Codex reads REDLINING.md or OOXML.md only when the user needs those features.
 
 - **Avoid deeply nested references** - Keep references one level deep from SKILL.md. All reference files should link directly from SKILL.md.
 - **Structure longer reference files** - For files longer than 100 lines, include a table of contents at the top so Codex can see the full scope when previewing.
+
+## Required Synthesis Output
+
+Before final generation, provide:
+
+1. Core skills selected and why.
+2. Support skills selected and why.
+3. Rejected options and why.
+4. Final workflow (3-7 steps).
+5. Risks, boundaries, and non-goals.
 
 ## Skill Creation Process
 
