@@ -9,7 +9,7 @@ It includes production-oriented skills for slide automation, literature synthesi
 
 ## Suggested Tags (Keywords)
 
-`codex` `agent-skills` `openai-codex` `skill-creator-plus` `pptx` `literature-review` `research-synthesis` `automation` `workflow` `prompt-engineering`
+`codex` `agent-skills` `openai-codex` `skill-creator-plus` `pptx` `literature-review` `research-synthesis` `automation` `workflow` `prompt-engineering` `ai-drawing` `image-generation`
 
 ## Skills Overview
 
@@ -18,6 +18,7 @@ It includes production-oriented skills for slide automation, literature synthesi
 | `pptx` | Creating/editing `.pptx`, slide redesign, chart/table/flow/timeline professionalization, and style migration. | `pptx/SKILL.md` |
 | `literature-research-synthesis` | Literature review, related-work writing, evidence mapping, and research gap analysis. | `literature-research-synthesis/SKILL.md` |
 | `skill-creator-plus` | Creating or updating skills with mandatory pre-study of local skills and curated resources before synthesis and generation. | `skill-creator-plus/SKILL.md` |
+| `ai-drawing-prompt` | Building model-specific, safe image prompt packs with iteration plans for OpenAI GPT Image, Midjourney, SDXL, and FLUX. | `ai-drawing-prompt/SKILL.md` |
 
 ## Skill Highlights
 
@@ -39,6 +40,12 @@ It includes production-oriented skills for slide automation, literature synthesi
 - Core outputs: `SKILL.md`, `agents/openai.yaml`, and optional `references/`, `scripts/`, `assets/`.
 - Core resources: `skill-creator-plus/references/` and `skill-creator-plus/scripts/`.
 
+### AI Drawing Prompt
+
+- Focus: production-ready AI image prompt engineering with model-specific parameter mapping.
+- Core outputs: prompt pack with primary prompt, parameter block, negative/avoidance rules, variants, and iteration plan.
+- Core resources: `ai-drawing-prompt/references/` and `ai-drawing-prompt/agents/openai.yaml`.
+
 ## Usage
 
 1. Open the target skill's `SKILL.md`.
@@ -54,3 +61,4 @@ It includes production-oriented skills for slide automation, literature synthesi
 | `literature-research-synthesis-v1.0.0` | `2026-02-22` | Initial literature research synthesis skill release |
 | `skill-creator-v1.0.0` | `2026-02-23` | Add `skill-creator` skill from OpenAI system skills baseline |
 | `skill-creator-plus-v1.1.0` | `2026-02-23` | Merge and upgrade `skill-creator` to `skill-creator-plus` with study+synthesis workflow |
+| `ai-drawing-prompt-v1.0.0` | `2026-02-23` | Add AI drawing prompt skill with reference-image workflow and model profiles |

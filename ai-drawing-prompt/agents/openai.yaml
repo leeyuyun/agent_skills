@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Drawing Prompt"
+  short_description: "Model-tuned prompts with safety and iteration."
+  default_prompt: "Use $ai-drawing-prompt to build a production-ready prompt pack for my image generation task."
