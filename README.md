@@ -61,4 +61,5 @@ It includes production-oriented skills for slide automation, literature synthesi
 | `literature-research-synthesis-v1.0.0` | `2026-02-22` | Initial literature research synthesis skill release |
 | `skill-creator-v1.0.0` | `2026-02-23` | Add `skill-creator` skill from OpenAI system skills baseline |
 | `skill-creator-plus-v1.1.0` | `2026-02-23` | Merge and upgrade `skill-creator` to `skill-creator-plus` with study+synthesis workflow |
+| `skill-creator-plus-v1.1.1` | `2026-02-23` | Fix `SKILL.md` UTF-8 BOM issue to restore frontmatter parsing and skill discovery |
 | `ai-drawing-prompt-v1.0.0` | `2026-02-23` | Add AI drawing prompt skill with reference-image workflow and model profiles |

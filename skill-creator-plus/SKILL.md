@@ -1,4 +1,4 @@
-﻿---
+---
 name: skill-creator-plus
 description: Guide for creating effective skills. Before generation, study local skills and `references/codex_skills_resources_zh.md`, then synthesize selected resources into a higher-quality skill design.
 metadata:
