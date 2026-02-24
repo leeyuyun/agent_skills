@@ -5,11 +5,11 @@ Reusable skills for Codex-style agents, focused on practical workflows, reproduc
 ## Repository Description
 
 `agent_skills` is a curated skill pack for Codex and similar coding agents.  
-It includes production-oriented skills for slide automation, literature synthesis, and skill creation workflows.
+It includes production-oriented skills for slide automation, literature synthesis, Excel workbook automation, and skill creation workflows.
 
 ## Suggested Tags (Keywords)
 
-`codex` `agent-skills` `openai-codex` `skill-creator-plus` `pptx` `literature-review` `research-synthesis` `automation` `workflow` `prompt-engineering` `ai-drawing` `image-generation`
+`codex` `agent-skills` `openai-codex` `skill-creator-plus` `pptx` `literature-review` `research-synthesis` `excel` `openpyxl` `pandas` `xlsxwriter` `automation` `workflow` `prompt-engineering` `ai-drawing` `image-generation`
 
 ## Skills Overview
 
@@ -19,6 +19,7 @@ It includes production-oriented skills for slide automation, literature synthesi
 | `literature-research-synthesis` | Literature review, related-work writing, evidence mapping, and research gap analysis. | `literature-research-synthesis/SKILL.md` |
 | `skill-creator-plus` | Creating or updating skills with mandatory pre-study of local skills and curated resources before synthesis and generation. | `skill-creator-plus/SKILL.md` |
 | `ai-drawing-prompt` | Building model-specific, safe image prompt packs with iteration plans for OpenAI GPT Image, Midjourney, SDXL, and FLUX. | `ai-drawing-prompt/SKILL.md` |
+| `excel-workbook` | Creating/cleaning/analyzing `.xlsx`/`.xlsm`/`.csv` with deterministic edits, formula safety, and report-ready outputs. | `excel-workbook/SKILL.md` |
 
 ## Skill Highlights
 
@@ -46,6 +47,12 @@ It includes production-oriented skills for slide automation, literature synthesi
 - Core outputs: prompt pack with primary prompt, parameter block, negative/avoidance rules, variants, and iteration plan.
 - Core resources: `ai-drawing-prompt/references/` and `ai-drawing-prompt/agents/openai.yaml`.
 
+### Excel Workbook
+
+- Focus: deterministic Excel workbook profiling, cleaning, transformation, and automation.
+- Core steps: lock workbook contract, optionally request a reference template, pick engine (`openpyxl`/`pandas`/`xlsxwriter`), apply edits, then validate formulas and totals.
+- Core resources: `excel-workbook/references/` and `excel-workbook/scripts/`.
+
 ## Usage
 
 1. Open the target skill's `SKILL.md`.
@@ -63,3 +70,4 @@ It includes production-oriented skills for slide automation, literature synthesi
 | `skill-creator-plus-v1.1.0` | `2026-02-23` | Merge and upgrade `skill-creator` to `skill-creator-plus` with study+synthesis workflow |
 | `skill-creator-plus-v1.1.1` | `2026-02-23` | Fix `SKILL.md` UTF-8 BOM issue to restore frontmatter parsing and skill discovery |
 | `ai-drawing-prompt-v1.0.0` | `2026-02-23` | Add AI drawing prompt skill with reference-image workflow and model profiles |
+| `excel-workbook-v1.0.0` | `2026-02-24` | Add Excel workbook automation skill with optional reference-template prompt and formula-safe workflow |

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Excel Workbook Toolkit"
+  short_description: "Automate Excel analysis, cleanup, and reporting."
+  default_prompt: "Use $excel-workbook to inspect, clean, and generate a reliable Excel workbook output."
