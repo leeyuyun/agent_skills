@@ -25,7 +25,7 @@ ALLOWED_RESOURCES = {"scripts", "references", "assets"}
 
 SKILL_TEMPLATE = """---
 name: {skill_name}
-description: [TODO: Complete and informative explanation of what the skill does and when to use it. Include WHEN to use this skill - specific scenarios, file types, or tasks that trigger it.]
+description: "TODO: Complete and informative explanation of what the skill does and when to use it. Include WHEN to use this skill - specific scenarios, file types, or tasks that trigger it."
 ---
 
 # {skill_title}
@@ -70,6 +70,15 @@ Delete this entire "Structuring This Skill" section when done - it's just guidan
 - Concrete examples with realistic user requests
 - References to scripts/templates/references as needed]
 
+## Test and QA Gate
+
+[TODO: If this skill contains executable business scripts, define mandatory QA commands and pass/fail conditions.]
+
+Example:
+- Run the main script(s) with representative fixtures.
+- Run `python scripts/qa_smoke_test.py ...` (or equivalent).
+- Require all checks to pass before marking work complete.
+
 ## Resources (optional)
 
 Create only the resource directories this skill actually needs. Delete this section if no resources are required.
@@ -84,6 +93,7 @@ Executable code (Python/Bash/etc.) that can be run directly to perform specific 
 **Appropriate for:** Python scripts, shell scripts, or any executable code that performs automation, data processing, or specific operations.
 
 **Note:** Scripts may be executed without loading into context, but can still be read by Codex for patching or environment adjustments.
+If scripts are present, include at least one QA script (for example `qa_smoke_test.py` or `test_*.py`).
 
 ### references/
 Documentation and reference material intended to be loaded into context to inform Codex's process and thinking.
@@ -94,6 +104,7 @@ Documentation and reference material intended to be loaded into context to infor
 - Finance: Schema documentation, company policies
 
 **Appropriate for:** In-depth documentation, API references, database schemas, comprehensive guides, or any detailed information that Codex should reference while working.
+If scripts are present, include `references/qa-checklist.md` with release checks.
 
 ### assets/
 Files not intended to be loaded into context, but rather used within the output Codex produces.
@@ -325,7 +336,8 @@ def init_skill(skill_name, path, resources, include_examples, interface_override
     else:
         print("2. Create resource directories only if needed (scripts/, references/, assets/)")
     print("3. Update agents/openai.yaml if the UI metadata should differ")
-    print("4. Run the validator when ready to check the skill structure")
+    print("4. Add QA artifacts if scripts are present (qa script + references/qa-checklist.md)")
+    print("5. Run the validator when ready to check the skill structure")
 
     return skill_dir
 

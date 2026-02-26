@@ -236,6 +236,19 @@ Before final generation, provide:
 3. Rejected options and why.
 4. Final workflow (3-7 steps).
 5. Risks, boundaries, and non-goals.
+6. QA plan: what to test, how to test, and release gate criteria.
+
+## Mandatory QA Policy
+
+Apply these rules when creating or updating a skill:
+
+1. If the skill contains executable business scripts in `scripts/`, include a dedicated QA step in `SKILL.md` body with a clear pass/fail gate.
+2. Add at least one runnable QA script in `scripts/` (for example `qa_smoke_test.py` or `test_*.py`) that validates output correctness.
+3. Add `references/qa-checklist.md` with release checks and regression focus.
+4. During delivery, run both:
+- `scripts/quick_validate.py <skill-folder>`
+- the skill's own QA script(s)
+5. Do not mark implementation complete without reporting QA command results.
 
 ## Skill Creation Process
 
@@ -299,6 +312,11 @@ Example: When building a `big-query` skill to handle queries like "How many user
 
 To establish the skill's contents, analyze each concrete example to create a list of the reusable resources to include: scripts, references, and assets.
 
+For any skill that produces or transforms data via scripts, also plan QA resources explicitly:
+- `scripts/qa_smoke_test.py` (or equivalent)
+- `references/qa-checklist.md`
+- test fixtures if needed
+
 ### Step 3: Initializing the Skill
 
 At this point, it is time to actually create the skill.
@@ -349,6 +367,8 @@ To begin implementation, start with the reusable resources identified above: `sc
 
 Added scripts must be tested by actually running them to ensure there are no bugs and that the output matches what is expected. If there are many similar scripts, only a representative sample needs to be tested to ensure confidence that they all work while balancing time to completion.
 
+If the skill includes business logic scripts, create and run a QA script before finalizing. Treat missing QA artifacts as an incomplete skill.
+
 If you used `--examples`, delete any placeholder files that are not needed for the skill. Only create resource directories that are actually required.
 
 #### Update SKILL.md
@@ -379,7 +399,9 @@ Once development of the skill is complete, validate the skill folder to catch ba
 scripts/quick_validate.py <path/to/skill-folder>
 ```
 
-The validation script checks YAML frontmatter format, required fields, and naming rules. If validation fails, fix the reported issues and run the command again.
+The validation script checks YAML frontmatter format, required fields, naming rules, and QA requirements for script-based skills. If validation fails, fix the reported issues and run the command again.
+
+Then run the skill's QA script(s) and report pass/fail results.
 
 ### Step 6: Iterate
 

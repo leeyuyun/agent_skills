@@ -10,6 +10,48 @@ from pathlib import Path
 import yaml
 
 MAX_SKILL_NAME_LENGTH = 64
+SCRIPT_SUFFIXES = {".py", ".sh", ".ps1", ".js", ".ts"}
+
+
+def has_business_scripts(skill_path):
+    scripts_dir = skill_path / "scripts"
+    if not scripts_dir.exists() or not scripts_dir.is_dir():
+        return False
+    for path in scripts_dir.rglob("*"):
+        if not path.is_file():
+            continue
+        if path.suffix.lower() not in SCRIPT_SUFFIXES:
+            continue
+        # Ignore obvious QA/test runners when deciding if business scripts exist.
+        lower_name = path.name.lower()
+        if "qa" in lower_name or lower_name.startswith("test_") or lower_name.endswith("_test.py"):
+            continue
+        return True
+    return False
+
+
+def has_qa_script(skill_path):
+    scripts_dir = skill_path / "scripts"
+    if not scripts_dir.exists() or not scripts_dir.is_dir():
+        return False
+    for path in scripts_dir.rglob("*"):
+        if not path.is_file():
+            continue
+        if path.suffix.lower() not in SCRIPT_SUFFIXES:
+            continue
+        lower_name = path.name.lower()
+        if (
+            "qa" in lower_name
+            or "validate" in lower_name
+            or lower_name.startswith("test_")
+            or lower_name.endswith("_test.py")
+        ):
+            return True
+    return False
+
+
+def has_qa_section(content):
+    return re.search(r"^##+\s+.*(?:qa|test)", content, re.IGNORECASE | re.MULTILINE) is not None
 
 
 def validate_skill(skill_path):
@@ -87,6 +129,15 @@ def validate_skill(skill_path):
                 False,
                 f"Description is too long ({len(description)} characters). Maximum is 1024 characters.",
             )
+
+    if has_business_scripts(skill_path):
+        if not has_qa_section(content):
+            return False, "Script-based skill must include a QA/Test section in SKILL.md body"
+        qa_checklist = skill_path / "references" / "qa-checklist.md"
+        if not qa_checklist.exists():
+            return False, "Script-based skill must include references/qa-checklist.md"
+        if not has_qa_script(skill_path):
+            return False, "Script-based skill must include at least one QA/test script under scripts/"
 
     return True, "Skill is valid!"
 
