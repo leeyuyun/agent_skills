@@ -39,6 +39,7 @@ It includes production-oriented skills for slide automation, literature synthesi
 
 - Focus: creating high-quality skills with a study-first workflow before generation.
 - Core outputs: `SKILL.md`, `agents/openai.yaml`, and optional `references/`, `scripts/`, `assets/`.
+- Since `v1.2.0`: enforce QA gates for script-based skills (QA/Test section in `SKILL.md`, runnable QA script, and `references/qa-checklist.md`).
 - Core resources: `skill-creator-plus/references/` and `skill-creator-plus/scripts/`.
 
 ### AI Drawing Prompt
@@ -69,5 +70,6 @@ It includes production-oriented skills for slide automation, literature synthesi
 | `skill-creator-v1.0.0` | `2026-02-23` | Add `skill-creator` skill from OpenAI system skills baseline |
 | `skill-creator-plus-v1.1.0` | `2026-02-23` | Merge and upgrade `skill-creator` to `skill-creator-plus` with study+synthesis workflow |
 | `skill-creator-plus-v1.1.1` | `2026-02-23` | Fix `SKILL.md` UTF-8 BOM issue to restore frontmatter parsing and skill discovery |
+| `skill-creator-plus-v1.2.0` | `2026-02-26` | Enforce mandatory QA gates for script-based skills (QA section, QA script, and `qa-checklist` validation) |
 | `ai-drawing-prompt-v1.0.0` | `2026-02-23` | Add AI drawing prompt skill with reference-image workflow and model profiles |
 | `excel-workbook-v1.0.0` | `2026-02-24` | Add Excel workbook automation skill with optional reference-template prompt and formula-safe workflow |
