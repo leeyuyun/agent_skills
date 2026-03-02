@@ -9,7 +9,7 @@ It includes production-oriented skills for slide automation, literature synthesi
 
 ## Suggested Tags (Keywords)
 
-`codex` `agent-skills` `openai-codex` `skill-creator-plus` `pptx` `literature-review` `research-synthesis` `excel` `openpyxl` `pandas` `xlsxwriter` `automation` `workflow` `prompt-engineering` `ai-drawing` `image-generation`
+`codex` `agent-skills` `openai-codex` `skill-creator-plus` `pptx` `literature-review` `research-synthesis` `excel` `openpyxl` `pandas` `xlsxwriter` `automation` `workflow` `prompt-engineering` `ai-drawing` `image-generation` `flight-fare-watch` `airfare` `travel-intelligence`
 
 ## Skills Overview
 
@@ -20,6 +20,7 @@ It includes production-oriented skills for slide automation, literature synthesi
 | `skill-creator-plus` | Creating or updating skills with mandatory pre-study of local skills and curated resources before synthesis and generation. | `skill-creator-plus/SKILL.md` |
 | `ai-drawing-prompt` | Building model-specific, safe image prompt packs with iteration plans for OpenAI GPT Image, Midjourney, SDXL, and FLUX. | `ai-drawing-prompt/SKILL.md` |
 | `excel-workbook` | Creating/cleaning/analyzing `.xlsx`/`.xlsm`/`.csv` with deterministic edits, formula safety, and report-ready outputs. | `excel-workbook/SKILL.md` |
+| `flight-fare-watch` | Daily business-travel fare intelligence from CSV inputs: public-fare survey, quote comparison, and recommendation reports. | `flight-fare-watch/SKILL.md` |
 
 ## Skill Highlights
 
@@ -54,6 +55,12 @@ It includes production-oriented skills for slide automation, literature synthesi
 - Core steps: lock workbook contract, optionally request a reference template, pick engine (`openpyxl`/`pandas`/`xlsxwriter`), apply edits, then validate formulas and totals.
 - Core resources: `excel-workbook/references/` and `excel-workbook/scripts/`.
 
+### Flight Fare Watch
+
+- Focus: reproducible daily airfare monitoring and internal-vs-public quote comparison.
+- Core outputs: `watchlist.csv`, `outputs/recommendations.csv`, and `outputs/daily-fare-report.md`.
+- Core resources: `flight-fare-watch/references/`, `flight-fare-watch/scripts/`, and `flight-fare-watch/agents/openai.yaml`.
+
 ## Usage
 
 1. Open the target skill's `SKILL.md`.
@@ -73,3 +80,4 @@ It includes production-oriented skills for slide automation, literature synthesi
 | `skill-creator-plus-v1.2.0` | `2026-02-26` | Enforce mandatory QA gates for script-based skills (QA section, QA script, and `qa-checklist` validation) |
 | `ai-drawing-prompt-v1.0.0` | `2026-02-23` | Add AI drawing prompt skill with reference-image workflow and model profiles |
 | `excel-workbook-v1.0.0` | `2026-02-24` | Add Excel workbook automation skill with optional reference-template prompt and formula-safe workflow |
+| `flight-fare-watch-v1.0.0` | `2026-03-02` | Add flight fare watch skill for daily public-fare survey and recommendation generation from CSV data |

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Flight Fare Watch"
+  short_description: "Daily flight fare survey and quote comparison"
+  default_prompt: "Compare current public airfare with internal quotes and produce recommendations."
